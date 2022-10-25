@@ -15,7 +15,7 @@ def favorite_animal(users_animal):
     return f"Wow, {users_animal} is my favorite animal, too!"
 
 
-@app.route("/desserts/<favorite_dessert>")
+@app.route("/dessert/<favorite_dessert>")
 def favorite_dessert(favorite_dessert):
     return f"How did you know I liked {favorite_dessert}?"
 
@@ -50,10 +50,10 @@ def say_n_times(word, num):
 @app.route("/dicegame")
 def dicegame():
     rand_num = random.randint(1, 6)
-    if rand_num is not 6:
-        return f"You rolled a {rand_num}. You lost!"
-    else:
+    if rand_num == 6:
         return "You rolled a 6. You won!"
+
+    return f"You rolled a {rand_num}. You lost!"
 
 
 if __name__ == "__main__":
